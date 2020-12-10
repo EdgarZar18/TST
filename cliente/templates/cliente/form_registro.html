@@ -1,0 +1,167 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %} 
+
+<form action="registrado/" method="POST" style="margin-top: 120px;">  {% csrf_token %}
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="nombre">Nombre(s):</label>
+			<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su nombre">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="apellido">Apellido(s):</label>
+			<input type="text" class="form-control" name="apellido" id="apellido" placeholder="Ingrese su apellido">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="direccion">Dirección:</label>
+		<input type="text" class="form-control" name="direccion" id="direccion" placeholder="Av. de la Reparación 2020 int. 19">
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="colonia">Colonia</label>
+			<input type="text" class="form-control" name="colonia" id="colonia">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="ciudad">Ciudad</label>
+			<input type="text" class="form-control" name="ciudad" id="ciudad">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="estado">Estado</label>
+			<input type="text" class="form-control" name="estado" id="estado">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="telefono">Telefóno fijo</label>
+			<input type="text" class="form-control" name="telefono" id="telefono">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="celular">Celular</label>
+			<input type="text" class="form-control" name="celular" id="celular">
+		</div>
+	</div> <br>
+	<p>* Si no cuenta con número de telefóno fijo ponga el de celular en "Telefóno fijo" </p> <br>
+	<div class="form-group">
+		<label for="correo">Dirección de correo electrónico:</label>
+		<input type="email" class="form-control" name="correo" id="correo" placeholder="reparandotuaparato@tst.com">
+	</div>
+	<div class="form-row">
+		<div class="col-auto">
+			<label for="aparato">Aparato</label>
+			<select name="aparato" id="aparato" class="form-control">
+				<option selected>Seleccione...</option>
+				<option value="abrelatas">ABRELATAS</option>
+				<option value="arrocera">ARROCERA</option>
+				<option value="asador">ASADOR</option>
+				<option value="aspiradora">ASPIRADORA</option>
+				<option value="bano_maria">BAÑO MARIA</option>
+				<option value="bascula">BASCULA</option>
+				<option value="bateria">BATERIA</option>
+				<option value="batidora">BATIDORA</option>
+				<option value="cafetera">CAFETERA</option>
+				<option value="cafetera_express">CAFETERA EXPRESS</option>
+				<option value="calefactor">CALEFACTOR</option>
+				<option value="calentador_biberones">CALENTADOR DE BIBERONES</option>
+				<option value="cepillo_vapor">CEPILLO DE VAPOR</option>
+				<option value="chocomilero">CHOCOMILERO</option>
+				<option value="cuchillo_electrico">CUCHILLO ELECTRICO</option>
+				<option value="depiladora">DEPILADORA</option>
+				<option value="despachador_agua">DESPACHADOR DE AGUA</option>
+				<option value="empacadora_vacio">EMPACADORA DE VACIO</option>
+				<option value="enfriador_agua">ENFRIADOR DE AGUA</option>
+				<option value="enfriador_vinos">ENFRIADOR DE VINOS</option>
+				<option value="enfridador_cerveza">ENFRIDADOR CERVEZA</option>
+				<option value="espumador_leche">ESPUMADOR DE LECHE</option>
+				<option value="exprimidor_jugos">EXPRIMIDOR DE JUGOS</option>
+				<option value="extractor_jugo">EXTRACTOR DE JUGO</option>
+				<option value="fabrica_hielo">FABRICA DE HIELO</option>
+				<option value="foodsaver">FOODSAVER</option>
+				<option value="frazada_calentamiento">FRAZADA DE CALENTAMIENTO</option>
+				<option value="freidora">FREIDORA</option>
+				<option value="fuente_chocolate">FUENTE DE CHOCOLATE</option>
+				<option value="generador_vapor">GENERADOR DE VAPOR</option>
+				<option value="granitera">GRANITERA</option>
+				<option value="hervidor_agua">HERVIDOR AGUA</option>
+				<option value="hidrolavadora">HIDROLAVADORA</option>
+				<option value="horno_gas">HORNO DE GAS</option>
+				<option value="horno_electrico">HORNO ELECTRICO</option>
+				<option value="licuadora">LICUADORA</option>
+				<option value="maquina_helados">MAQUINA DE HELADOS</option>
+				<option value="maquina_raspados">MAQUINA DE RASPADOS</option>
+				<option value="microondas">MICROONDAS</option>
+				<option value="molino_cafe">MOLINO CAFE</option>
+				<option value="molino_carne">MOLINO DE CARNE</option>
+				<option value="motor_brida_c">MOTOR BRIDA C</option>
+				<option value="motor_uso_gral">MOTOR USO GRAL</option>
+				<option value="no_break">NO BREAK</option>
+				<option value="olla_express">OLLA EXPRESS</option>
+				<option value="olla_multiusos">OLLA MULTIUSOS</option>
+				<option value="palomera">PALOMERA</option>
+				<option value="panera">PANERA</option>
+				<option value="panini">PANINI</option>
+				<option value="parrilla">PARRILLA</option>
+				<option value="picadora">PICADORA</option>
+				<option value="plancha">PLANCHA</option>
+				<option value="plancha_cabello">PLANCHA DE CABELLO</option>
+				<option value="procesador_alimentos">PROCESADOR DE ALIMENTOS</option>
+				<option value="pulidora">PULIDORA</option>
+				<option value="purificador_aire">PURIFICADOR DE AIRE</option>
+				<option value="rasuradora">RASURADORA</option>
+				<option value="rebanadora">REBANADORA</option>
+				<option value="regulador_voltaje">REGULADOR DE VOLTAJE</option>
+				<option value="rostisero">ROSTISERO</option>
+				<option value="sandwicheras">SANDWICHERAS</option>
+				<option value="sarten_electrico">SARTEN ELECTRICO</option>
+				<option value="secadora">SECADORA</option>
+				<option value="tetera">TETERA</option>
+				<option value="tostador">TOSTADOR</option>
+				<option value="turbo_batidor">TURBO BATIDOR</option>
+				<option value="vaporera">VAPORERA</option>
+				<option value="vaso_licuadora">VASO LICUADORA</option>
+				<option value="ventilador">VENTILADOR</option>
+				<option value="vitrina">VITRINA</option>
+				<option value="wafflera">WAFFLERA</option>
+				<option value="otros">OTROS</option>
+			</select>
+        </div>
+    </div>
+    <div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="marca">Marca</label>
+			<input type="text" class="form-control mb-2" name="marca" id="marca">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="modelo">Modelo</label>
+			<input type="text" class="form-control mb-2" name="modelo" id="modelo">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="tipo_servico">Tipo de servicio:</label>
+		<select name="aparato" name="tipo_servico" id="tipo_servico" class="form-control">
+			<option value="garantia">Garantía</option>
+			<option value="costo">Costo</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="descripcion_falla">Descripcion de la falla:</label>
+		<textarea class="form-control" name="descripcion_falla" id="descripcion_falla" rows="3"></textarea>
+	</div>
+	<div class="form-group">
+		<label for="evidencia">Seleccione un video con la evidencia de la falla</label>
+		<input type="file" class="form-control-file" name="evidencia" id="evidencia">
+	</div>
+	<div class="form-group">
+		<label for="evidencia">Seleccione la imagen de su ticket o poliza</label>
+		<input type="file" class="form-control-file" name="evidencia" id="evidencia">
+	</div>
+	<p>*Si el servicio es de garantía sera requerido</p> <br>
+	<div class="form-group">
+		<label for="descripcion_aparato">Descripcion del estado del aparato:</label>
+		<textarea class="form-control" name="descripcion_aparato" id="descripcion_aparato" rows="3" placeholder="Comente si cuenta con todos los accesorios, si tiene rayones, partes rotas, que esta en buen estado, etc..."></textarea>
+	</div>
+	<button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{% endblock %}

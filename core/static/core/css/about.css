@@ -1,0 +1,15 @@
+.quienessomos-container {
+    width: 80%;
+    display: grid;
+    grid-template-rows: 5;
+    padding: 10%;
+}
+
+.information-card-quienes {
+    width: 100%;
+    text-align: center;
+}
+
+.information-card-quienes  h2 {
+    text-align: left;
+}

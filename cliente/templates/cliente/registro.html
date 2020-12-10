@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            Algo salio! :) intentalo mas tarde!
+        </div>
+    {% endif %}
+        <h1>Registro de Servicio</h1>
+
+    <form action="{% url 'registrado' %}" method="POST" style="margin-top: 100px;">
+        {% csrf_token %}
+        {% if mensaje  %}
+            <div class="alert alert-success" role="alert">
+                Registro Exitoso!
+            </div>
+            <a href="{% url 'registrado' registrado.id %}" class="link">{{registrado.name}}</a>{% if not forloop.last %},{% endif %}
+        {% endif %}
+
+            {{ form|crispy }}
+        
+            <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+{% endblock %}

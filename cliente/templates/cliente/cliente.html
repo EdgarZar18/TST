@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<div class="row" style="margin-top: 120px;">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Registro de servicio de garantía o costo</h5>
+          <p class="card-text">Este registro nos proporcionará los datos necesarios para brindar una mejor y eficáz atención.</p>
+          <a href="{% url 'registro_r' %}" class="btn btn-primary">Registro</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Consulta de estatus del servicio</h5>
+          <p class="card-text">Conoce en que estado se encuentra tu reparación o servicio de garantía.</p>
+          <a href="{% url 'estatus' %}" class="btn btn-primary">Consulta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

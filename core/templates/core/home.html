@@ -1,0 +1,80 @@
+{% extends 'core/base.html' %}
+
+{% block content %} 
+{% load static %}
+<link rel="stylesheet" href="{% static 'core/css/home.css' %}" />
+<main>
+    <section class="all-container">
+        <input type="radio" id="1" name="image-slide" hidden/>
+        <input type="radio" id="2" name="image-slide" hidden/>
+        <input type="radio" id="3" name="image-slide" hidden/>
+
+        <div class="slider-container">
+            <div class="slide-item">
+                <img src="{% static 'core/img/imagenes_main_carrusel/mecanico.jpg' %}"/>
+            </div>
+            <div class="slide-item">
+                <img src="{% static 'core/img/imagenes_main_carrusel/mesadetrabajo.jpg' %}"/>
+            </div>
+            <div class="slide-item">
+                <img src="{% static 'core/img/imagenes_main_carrusel/motor.jpg' %}"/>
+                <h1>Ven y conocenos!</h1>
+            </div>
+        </div>
+        <div class="pagination">
+            <label class="pagination-item" for="1">
+                <img src="{% static 'core/img/imagenes_main_carrusel/mecanico.jpg' %}"/>
+            </label>
+            <label class="pagination-item" for="2">
+                <img src="{% static 'core/img/imagenes_main_carrusel/mesadetrabajo.jpg' %}"/>
+            </label>
+            <label class="pagination-item" for="3">
+                <img src="{% static 'core/img/imagenes_main_carrusel/motor.jpg' %}"/>
+            </label>
+        </div>
+    </section>
+</main>
+<section class="informacion-consultas">
+    <article class="informacion-card">
+        <figure class="imagen-card">
+            <img src="{% static 'core/img/iconos/ubicacion.jpg' %}" alt="Ubicación"/>
+        </figure>
+        <h3>Consulta el estatus de tu reparación</h3>
+        <p>Revisa el estatus de la reparacion de tu aparato
+            o el estado de la garantía. Cualquier duda o 
+            comentario no dudes en contactarnos.
+        </p>
+        <h5></h5>
+        <form action="{% url 'estatus' %}">
+            <input type="submit" value="Estatus" />
+        </form>
+    </article>
+    <article class="informacion-card">
+        <figure class="imagen-card">
+            <img src="{% static 'core/img/iconos/servicios.JPG' %}" alt="Ubicación"/>
+        </figure>
+        <h3>Registra tu servicio</h3>
+        <p>Aqui puedes registrar tu servicio de garantía o 
+            de costo. Recuerda que este registro nos brinda la informació
+            necesaria para brindarte un mejor servicio y eficaz.
+        </p>
+        <h5>Solo da clic y registra!</h5>
+        <form action="{% url 'registro_r' %}">
+            <input type="submit" value="Registra" />
+        </form>
+    </article>
+    <article class="informacion-card">
+        <figure class="imagen-card">
+            <img src="{% static 'core/img/iconos/store.jpg' %}" alt="Tienda" width="80px" height="80px"/>
+        </figure>
+        <h3>Catalogo en línea</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Harum ad accusantium labore error necessitatibus illo vel 
+            assumenda obcaecati laboriosam officiis incidunt provident, 
+            sapiente temporibus dolorem in doloremque sequi vitae rerum?
+        </p>
+        <h5>Proximamente...</h5>
+    </article>
+</section>
+
+{% endblock %}
